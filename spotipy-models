@@ -1,0 +1,28 @@
+clase usuario(padre)
+*buscar una cancion
+*escuchar canciones
+*marcar como favoritos
+*crear playlist
+    modificar playlist
+
+premium
+    reproducir playlist(polimorfismo)
+gratis
+    reproducir playlist(polimorfismo)
+    
+artista
+    publicar canciones
+
+
+clase podcast
+
+clase canciones
+    pertenecen a un artista
+    pertenecen a playlist
+    
+    
+clase playlist
+    nombre
+    
+    *add song
+    *len songs
