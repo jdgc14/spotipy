@@ -20,14 +20,11 @@ class PlayList:
         return 'song added successfully'
 
     def del_song(self):
-        for index, melody in enumerate(self.songs_playlist, start=1):
-            print(f'{index}. {melody}')
-        #TODO:
-        #Exception
+        self.show_songs()
 
         try:
             delete = int(input('Select song to delete'))
-            if (delete >= len(self.songs_playlist)) or (delete <=0):
+            if (delete > len(self.songs_playlist)) or (delete <=0):
                 raise MusicNotFound()
             del self.songs_playlist[delete-1]
             return 'the song has been deleted'

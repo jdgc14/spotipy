@@ -12,8 +12,7 @@ class UserPremium(User):
 
     def play_playlist(self):
         
-        for index, playlist_name in enumerate(self.playlists.keys(), start=1):
-            print(f'{index}. {playlist_name}')
+        self.show_playlists()
 
         try:
             playlist_to_play = input('What playlist name do you want to listening?')
@@ -46,15 +45,11 @@ class UserPremium(User):
 
         elif mode_reproduction == 2:
             playlist_copy.show_songs()
-            song_start = int(input('Select number song: '))
+            song_start = int(input('Select number song: ')) -1
             first_half = playlist_copy.songs_playlist[song_start:]
             second_half = playlist_copy.songs_playlist[:song_start]
             first_half.extend(second_half)
             playlist_copy.songs_playlist = first_half
 
         for song in playlist_copy.songs_playlist:
-            print(song)
-
-
-
-
+            song.play()

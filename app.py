@@ -1,93 +1,23 @@
-from models.user_free import UserFree
-from models.user_premium import UserPremium
-from models.playlist import PlayList
-from models.artist import Artist
-from models.song import Song
+from constant.dua_lipa import lipa, this_is_dualipa
+from constant.minaj import minaj, this_is_minaj
+from constant.bieber import bieber
+from constant.user_jose import jose_user
+from constant.user_viviana import user_viviana
 
 
+# jose_user.default_playlist(this_is_dualipa)
+# jose_user.default_playlist(this_is_minaj)
 
-print('user free create')
-uf = UserFree('jose', '12345', 'email@email.com')
-print(uf.username)
-print(uf.subscription)
-print()
+# print(lipa)
+# print(lipa.get_followers())
+# print(lipa.albums['dualipa_deluxe'].show_songs())
+# print(lipa.numbers_songs())
 
-print('user premium create')
-up = UserPremium('viviana', '12345', 'vivi@gmail.com')
-print(up.username)
-print(up.subscription)
-print()
+# print(minaj)
+# print(minaj.albums)
+# print(minaj.numbers_songs())
 
-# print('playlist create')
-# pl = PlayList('primera playlist')
-# print(pl.playlist_name)
-# pl.add_song('nada')
-# pl.add_song('hola')
-# print(pl.songs_playlist)
-# print(pl.enumerate_songs())
+# print(bieber)
+# print(bieber.albums)
+# print(bieber.numbers_songs())
 
-print('artist create')
-artist1 = Artist(username='artista1', password='1234', email='artista1@mail.com', subscription=True, biography='soy la biografia')
-print('name artist', artist1.username)
-print(artist1.biography)
-print('lista de canciones', artist1.albums)
-print(artist1.get_followers())
-
-print('\n\n')
-print('song create')
-song1 = Song.create(name='mi cancion', time=180, author=artist1, lyrics='letra de la cancion1', album='album1')
-print(song1.name)
-print(song1.lyrics)
-print(song1.time)
-print(song1.author)
-print(artist1.albums)
-
-print('\n\n')
-print('song create')
-song2 = Song.create(name='mi cancion2', time=100, author=artist1, lyrics='letra de la cancion2', album='album1')
-print(song2.name)
-print(song2.lyrics)
-print(song2.time)
-print(song2.author)
-print(artist1.albums)
-
-print('\n\n')
-print('song create')
-song3 = Song.create(name='mi cancion3', time=120, author=artist1, lyrics='letra de la cancion2', album='album2')
-print(song3.name)
-print(song3.lyrics)
-print(song3.time)
-print(song3.author)
-print(artist1.albums)
-print(artist1.numbers_songs())
-
-
-# print(uf.create_playlist('playlist 1'))
-# print(uf.playlists)
-# print(uf.create_playlist('playlist 2'))
-# print(uf.playlists['playlist 1'].add_song(song1))
-# print(uf.playlists['playlist 1'].songs_playlist)
-# print(uf.playlists['playlist 1'].add_song(song2))
-# print(uf.playlists['playlist 1'].songs_playlist)
-# print(uf.playlists['playlist 1'].add_song(song3))
-# print(uf.playlists['playlist 1'].songs_playlist)
-# # print(uf.playlists['mi_playlist'].del_song())
-# print(uf.playlists['playlist 1'].songs_playlist)
-
-# uf.play_playlist()
-# print(uf.playlists['playlist 1'].songs_playlist)
-
-print(up.create_playlist('playlist 1'))
-print(up.playlists)
-print(up.create_playlist('playlist 2'))
-print(up.playlists['playlist 1'].add_song(song1))
-print(up.playlists['playlist 1'].songs_playlist)
-print(up.playlists['playlist 1'].add_song(song2))
-print(up.playlists['playlist 1'].songs_playlist)
-print(up.playlists['playlist 1'].add_song(song3))
-print(up.playlists['playlist 1'].songs_playlist)
-# print(up.playlists['mi_playlist'].del_song())
-print(up.playlists['playlist 1'].songs_playlist)
-
-up.play_playlist()
-print(up.playlists['playlist 1'].songs_playlist)
