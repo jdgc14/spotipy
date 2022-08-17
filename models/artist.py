@@ -11,8 +11,6 @@ class Artist(UserPremium):
 		self.albums = {'singles' : Album.create('singles')}
 		self.followers = 0
 
-	def __str__(self):
-		return f'{self.username}'
 
 	def add_song(self, song, album=None):
 		if album:
@@ -38,4 +36,9 @@ class Artist(UserPremium):
 		numbers_songs = 0
 		for album in self.albums:
 			numbers_songs += self.albums[album].enumerate_songs()
-		return numbers_songs
+		return f'numbers of songs: {numbers_songs}'
+
+	def get_albums(self):
+		print('discography:')
+		for album in self.albums.values():
+			print(album)

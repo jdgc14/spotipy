@@ -7,7 +7,7 @@ from constant import bios
 
 minaj = Artist('nickyminaj', 'minaj098', 'nickyminaj@email.com', bios.minaj_bio)
 
-queen_list = [
+queen_list = (
 	['Ganja Burn', '4:54'],
 	['Majesty', '4:55'],
 	['Barbie Dreams', '3:18'],
@@ -27,7 +27,7 @@ queen_list = [
 	['Miami', '3:10'],
 	['Coco Chanel', '3:44'],
 	['Inspirations Outro', '0:58'],
-]
+)
 
 
 # minaj.add_album('queen')
